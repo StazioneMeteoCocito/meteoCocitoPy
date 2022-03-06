@@ -1,0 +1,262 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module meteoCocito</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>meteoCocito</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/home/mattia/private/paitons/meteoCocito.py">/home/mattia/private/paitons/meteoCocito.py</a></font></td></tr></table>
+    <p></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="datetime.html">datetime</a><br>
+<a href="glob.html">glob</a><br>
+</td><td width="25%" valign=top><a href="json.html">json</a><br>
+<a href="os.html">os</a><br>
+</td><td width="25%" valign=top><a href="pygit2.html">pygit2</a><br>
+<a href="statistics.html">statistics</a><br>
+</td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="builtins.html#object">builtins.object</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="meteoCocito.html#DataArchive">DataArchive</a>
+</font></dt><dt><font face="helvetica, arial"><a href="meteoCocito.html#DataType">DataType</a>
+</font></dt><dt><font face="helvetica, arial"><a href="meteoCocito.html#DataTypeArchive">DataTypeArchive</a>
+</font></dt><dt><font face="helvetica, arial"><a href="meteoCocito.html#Stats">Stats</a>
+</font></dt><dt><font face="helvetica, arial"><a href="meteoCocito.html#TextGenerator">TextGenerator</a>
+</font></dt><dt><font face="helvetica, arial"><a href="meteoCocito.html#Value">Value</a>
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="DataArchive">class <strong>DataArchive</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    
+<tr><td bgcolor="#ffc8d8"><tt>&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%">Static methods defined here:<br>
+<dl><dt><a name="DataArchive-betweenDatetimes"><strong>betweenDatetimes</strong></a>(start: 'datetime.datetime', end: 'datetime.datetime') -&gt; 'list[Value]'</dt><dd><tt>Obtain&nbsp;a&nbsp;list&nbsp;of&nbsp;all&nbsp;values&nbsp;between&nbsp;two&nbsp;datetimes<br>
+:param&nbsp;start:&nbsp;start&nbsp;datetime<br>
+:param&nbsp;end:&nbsp;end&nbsp;datetime<br>
+:return:&nbsp;lsit&nbsp;of&nbsp;Values</tt></dd></dl>
+
+<dl><dt><a name="DataArchive-create"><strong>create</strong></a>() -&gt; 'None'</dt><dd><tt>Download&nbsp;the&nbsp;data&nbsp;the&nbsp;first&nbsp;time<br>
+:return:&nbsp;None<br>
+:except&nbsp;May&nbsp;rise&nbsp;connection&nbsp;exceptions</tt></dd></dl>
+
+<dl><dt><a name="DataArchive-current"><strong>current</strong></a>() -&gt; 'dict'</dt><dd><tt>Obtain&nbsp;the&nbsp;last&nbsp;data</tt></dd></dl>
+
+<dl><dt><a name="DataArchive-day"><strong>day</strong></a>() -&gt; 'list[Value]'</dt><dd><tt>Obtain&nbsp;all&nbsp;values&nbsp;generated&nbsp;today<br>
+:return:&nbsp;list&nbsp;of&nbsp;values</tt></dd></dl>
+
+<dl><dt><a name="DataArchive-latestDatetime"><strong>latestDatetime</strong></a>() -&gt; 'str'</dt><dd><tt>Obtain&nbsp;a&nbsp;string&nbsp;representation&nbsp;(dd/mm/yyyy&nbsp;HH:MM:SS)&nbsp;of&nbsp;the&nbsp;last&nbsp;data&nbsp;instant<br>
+:return:&nbsp;The&nbsp;string&nbsp;representation</tt></dd></dl>
+
+<dl><dt><a name="DataArchive-month"><strong>month</strong></a>() -&gt; 'list[Value]'</dt><dd><tt>Obtain&nbsp;all&nbsp;values&nbsp;generated&nbsp;this&nbsp;month<br>
+:return:&nbsp;list&nbsp;of&nbsp;values</tt></dd></dl>
+
+<dl><dt><a name="DataArchive-report"><strong>report</strong></a>() -&gt; 'str'</dt><dd><tt>Obtain&nbsp;last&nbsp;hardware&nbsp;report&nbsp;text</tt></dd></dl>
+
+<dl><dt><a name="DataArchive-update"><strong>update</strong></a>() -&gt; 'None'</dt><dd><tt>Pull&nbsp;data<br>
+:return:&nbsp;None<br>
+:except&nbsp;May&nbsp;rise&nbsp;connection&nbsp;exceptions</tt></dd></dl>
+
+<dl><dt><a name="DataArchive-week"><strong>week</strong></a>() -&gt; 'list[Value]'</dt><dd><tt>Obtain&nbsp;all&nbsp;values&nbsp;generated&nbsp;this&nbsp;week<br>
+:return:&nbsp;list&nbsp;of&nbsp;values</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="DataType">class <strong>DataType</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#DataType">DataType</a>(symbol:&nbsp;'str',&nbsp;unit:&nbsp;'str',&nbsp;fileName:&nbsp;'str',&nbsp;italianName:&nbsp;'str',&nbsp;precision:&nbsp;'int'&nbsp;=&nbsp;2)<br>
+&nbsp;<br>
+<a href="#DataType">DataType</a>&nbsp;is&nbsp;a&nbsp;representation&nbsp;of&nbsp;a&nbsp;weather&nbsp;data&nbsp;type<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="DataType-__eq__"><strong>__eq__</strong></a>(self, other: 'DataType') -&gt; 'bool'</dt><dd><tt>Return&nbsp;self==value.</tt></dd></dl>
+
+<dl><dt><a name="DataType-__init__"><strong>__init__</strong></a>(self, symbol: 'str', unit: 'str', fileName: 'str', italianName: 'str', precision: 'int' = 2)</dt><dd><tt>&nbsp;Construct&nbsp;a&nbsp;new&nbsp;'<a href="#DataType">DataType</a>'&nbsp;<a href="builtins.html#object">object</a>.<br>
+:param&nbsp;symbol:&nbsp;The&nbsp;internal&nbsp;data&nbsp;symbol&nbsp;of&nbsp;the&nbsp;value<br>
+:param&nbsp;unit:&nbsp;The&nbsp;unit&nbsp;of&nbsp;measurement<br>
+:param&nbsp;fileName:&nbsp;The&nbsp;CSV&nbsp;associated&nbsp;filename&nbsp;in&nbsp;https://github.com/StazioneMeteoCocito/dati<br>
+:param&nbsp;italianName:&nbsp;The&nbsp;italian&nbsp;name&nbsp;of&nbsp;the&nbsp;data&nbsp;type<br>
+:return:&nbsp;returns&nbsp;nothing</tt></dd></dl>
+
+<dl><dt><a name="DataType-__str__"><strong>__str__</strong></a>(self) -&gt; 'str'</dt><dd><tt>Return&nbsp;str(self).</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>__hash__</strong> = None</dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="DataTypeArchive">class <strong>DataTypeArchive</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>A&nbsp;class&nbsp;to&nbsp;handle&nbsp;the&nbsp;list&nbsp;of&nbsp;available&nbsp;datatypes<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="DataTypeArchive-__len__"><strong>__len__</strong></a>(self) -&gt; 'int'</dt></dl>
+
+<dl><dt><a name="DataTypeArchive-__str__"><strong>__str__</strong></a>(self) -&gt; 'str'</dt><dd><tt>Return&nbsp;str(self).</tt></dd></dl>
+
+<hr>
+Static methods defined here:<br>
+<dl><dt><a name="DataTypeArchive-fromFileName"><strong>fromFileName</strong></a>(fileName: 'str') -&gt; 'DataType | None'</dt><dd><tt>Obtain&nbsp;<a href="#DataType">DataType</a>&nbsp;from&nbsp;fileName<br>
+:param&nbsp;fileName:&nbsp;The&nbsp;fileName<br>
+:return:&nbsp;The&nbsp;<a href="#DataType">DataType</a></tt></dd></dl>
+
+<dl><dt><a name="DataTypeArchive-fromItalianName"><strong>fromItalianName</strong></a>(italianName: 'str') -&gt; 'DataType | None'</dt><dd><tt>Obtain&nbsp;<a href="#DataType">DataType</a>&nbsp;from&nbsp;ItalianName<br>
+:param&nbsp;italianName:&nbsp;The&nbsp;ItalianName<br>
+:return:&nbsp;The&nbsp;<a href="#DataType">DataType</a></tt></dd></dl>
+
+<dl><dt><a name="DataTypeArchive-fromSymbol"><strong>fromSymbol</strong></a>(symbol: 'str') -&gt; 'DataType | None'</dt><dd><tt>Obtain&nbsp;<a href="#DataType">DataType</a>&nbsp;from&nbsp;Symbol<br>
+:param&nbsp;symbol:&nbsp;The&nbsp;symbol<br>
+:return:&nbsp;The&nbsp;<a href="#DataType">DataType</a></tt></dd></dl>
+
+<dl><dt><a name="DataTypeArchive-fromUnit"><strong>fromUnit</strong></a>(unit: 'str') -&gt; 'DataType | None'</dt><dd><tt>Obtain&nbsp;<a href="#DataType">DataType</a>&nbsp;from&nbsp;Unit<br>
+:param&nbsp;unit:&nbsp;The&nbsp;Unit<br>
+:return:&nbsp;The&nbsp;<a href="#DataType">DataType</a></tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>Symbols</strong> = &lt;enum 'Symbols'&gt;<dd><tt>List&nbsp;of&nbsp;internal&nbsp;symbols&nbsp;associated&nbsp;with&nbsp;datatypes</tt></dl>
+
+<dl><dt><strong>data</strong> = [&lt;meteoCocito.DataType object&gt;, &lt;meteoCocito.DataType object&gt;, &lt;meteoCocito.DataType object&gt;, &lt;meteoCocito.DataType object&gt;, &lt;meteoCocito.DataType object&gt;, &lt;meteoCocito.DataType object&gt;]</dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Stats">class <strong>Stats</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#Stats">Stats</a>(dataList:&nbsp;'list')<br>
+&nbsp;<br>
+Takes&nbsp;a&nbsp;datalist&nbsp;and&nbsp;sets&nbsp;a&nbsp;"results"&nbsp;resultMap&nbsp;attribute&nbsp;with&nbsp;a&nbsp;statistical&nbsp;value&nbsp;for&nbsp;each&nbsp;symbol<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="Stats-__init__"><strong>__init__</strong></a>(self, dataList: 'list')</dt><dd><tt>Instantiate&nbsp;a&nbsp;Stat&nbsp;Object<br>
+&nbsp;&nbsp;&nbsp;&nbsp;:param&nbsp;dataList:&nbsp;The&nbsp;target&nbsp;datalist</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="TextGenerator">class <strong>TextGenerator</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Generatior&nbsp;for&nbsp;italian&nbsp;text&nbsp;excerpts&nbsp;representing&nbsp;the&nbsp;data<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Static methods defined here:<br>
+<dl><dt><a name="TextGenerator-current"><strong>current</strong></a>() -&gt; 'list[str]'</dt><dd><tt>Current&nbsp;data&nbsp;excerpt<br>
+:return:&nbsp;array&nbsp;of&nbsp;excerpts</tt></dd></dl>
+
+<dl><dt><a name="TextGenerator-day"><strong>day</strong></a>() -&gt; 'list[str]'</dt><dd><tt>Current&nbsp;day&nbsp;summary<br>
+:return:&nbsp;array&nbsp;of&nbsp;excerpts</tt></dd></dl>
+
+<dl><dt><a name="TextGenerator-month"><strong>month</strong></a>() -&gt; 'list[str]'</dt><dd><tt>Current&nbsp;month&nbsp;summary<br>
+:return:&nbsp;array&nbsp;of&nbsp;excerpts</tt></dd></dl>
+
+<dl><dt><a name="TextGenerator-report"><strong>report</strong></a>() -&gt; 'list[str]'</dt><dd><tt>Current&nbsp;hardware&nbsp;report<br>
+:return:&nbsp;array&nbsp;of&nbsp;excerpts</tt></dd></dl>
+
+<dl><dt><a name="TextGenerator-week"><strong>week</strong></a>() -&gt; 'list[str]'</dt><dd><tt>Current&nbsp;week&nbsp;summary<br>
+:return:&nbsp;array&nbsp;of&nbsp;excerpts</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Value">class <strong>Value</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#Value">Value</a>(value:&nbsp;'float',&nbsp;symbol:&nbsp;'<a href="#DataTypeArchive">DataTypeArchive</a>.Symbols'&nbsp;=&nbsp;&amp;lt;Symbols.temperature:&nbsp;'T'&amp;gt;,&nbsp;instant:&nbsp;'datetime.datetime'&nbsp;=&nbsp;datetime.datetime(2022,&nbsp;3,&nbsp;7,&nbsp;0,&nbsp;3,&nbsp;25,&nbsp;975283))<br>
+&nbsp;<br>
+Stores&nbsp;a&nbsp;value,&nbsp;its&nbsp;datatype&nbsp;symbol&nbsp;and&nbsp;instant&nbsp;of&nbsp;acquisition<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="Value-__float__"><strong>__float__</strong></a>(self) -&gt; 'float'</dt></dl>
+
+<dl><dt><a name="Value-__init__"><strong>__init__</strong></a>(self, value: 'float', symbol: 'DataTypeArchive.Symbols' = &lt;Symbols.temperature: 'T'&gt;, instant: 'datetime.datetime' = datetime.datetime(2022, 3, 7, 0, 3, 25, 975283))</dt><dd><tt>Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<dl><dt><a name="Value-__int__"><strong>__int__</strong></a>(self) -&gt; 'int'</dt></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>annotations</strong> = _Feature((3, 7, 0, 'beta', 1), (3, 10, 0, 'alpha', 0), 16777216)</td></tr></table>
+</body></html>
